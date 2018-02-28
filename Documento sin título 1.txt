@@ -1,0 +1,32 @@
+# -*- coding: utf-8 -*-
+
+"""
+Created on Tue Jan 30 16:13:35 2018
+
+
+@author: asus
+
+"""
+
+import facebook
+
+
+token = 'c1b483bc9075b649f6d19d0e2cae3ffa'
+
+
+graph = facebook.GraphAPI(token)
+
+profile = graph.get_object("me")
+
+friends = graph.get_connections("me", "friends")
+
+
+
+friend_list = [friend['name'] for friend in friends
+['data']]
+
+
+
+print friend_list
+
+
